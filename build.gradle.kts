@@ -17,7 +17,9 @@ tasks {
     from(sourceSets.main.get().allSource)
     // replace placeholders in resource directory
     // e.g. the submission-info.json file
-    expand(project.properties)
+    filesMatching("submission-info.json") {
+      expand(project.properties)
+    }
     // set the name of the output jar
     archiveFileName.set("$assignmentId-$lastName-$firstName-submission.jar")
   }
