@@ -1,5 +1,6 @@
 {
   "assignmentId": "$assignmentId",
+  "studentId": "$studentId",
   "firstName": "$firstName",
   "lastName": "$lastName"
 }
