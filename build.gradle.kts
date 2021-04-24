@@ -4,9 +4,9 @@ plugins {
 }
 
 val assignmentId: String by extra("H02")
-val studentId: String by extra("_not_set_") // TU-ID  z.B. ab12cdef
-val firstName: String by extra("_not_set_")
-val lastName: String by extra("_not_set_")
+val studentId: String by extra("hb68rasy  ") // TU-ID  z.B. ab12cdef
+val firstName: String by extra("Henrik")
+val lastName: String by extra("Bornemann")
 
 // !! Achtung !!
 // Die studentId (TU-ID) ist keine Matrikelnummer
