@@ -1,7 +1,10 @@
 package h02.list_of_arrays;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.nio.Buffer;
+import java.nio.file.Files;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -25,14 +28,23 @@ public class ListOfArrays<T> implements List<T> {
     this.tail = tail;
   }
 
-  public void readArrayLength (String string) throws IOException, NegativeArraySizeException {
+  public void readArrayLength(String string) throws Exception {
     File file = new File(string);
-    if (file.exists() || file.){
-
-    } else {
-      throw new IOException();
+    if (file.exists() || file.canRead()) {
+      int i;
+      try {
+        var read = new BufferedReader(Files.newBufferedReader(file.toPath());
+        i = Integer.parseInt(read.readLine());
+      } catch (IOException e) {
+        throw e;
+      } catch (Exception e) {
+        throw new IOException();
+      }
+      if (i < 0)
+        throw new NegativeArraySizeException();
     }
   }
+
 
   @Override
   public int size() {
@@ -46,6 +58,8 @@ public class ListOfArrays<T> implements List<T> {
 
   @Override
   public boolean contains(Object o) {
+    var nTail = head;
+    while (nTail.next != null)
     return false;
   }
 
